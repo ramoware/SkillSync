@@ -1,18 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    serverComponentsExternalPackages: ['@prisma/client']
+  },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
-  images: {
-    domains: ['lh3.googleusercontent.com'],
-  },
-  // Add this to handle dynamic pages better
-  experimental: {
-    esmExternals: 'loose'
-  }
 }
 
 module.exports = nextConfig
