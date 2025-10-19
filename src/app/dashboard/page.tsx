@@ -76,7 +76,7 @@ export default function Dashboard() {
       <header className="p-4 md:p-6 border-b border-green-700/30 backdrop-blur-lg">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="text-center sm:text-left">
-            <h1 className="text-2xl md:text-3xl font-lora font-bold gradient-text">
+            <h1 className="text-2xl md:text-3xl font-lora font-bold text-yellow-400 mb-1">
               Dashboard
             </h1>
             <p className="text-green-200 text-sm md:text-base">
@@ -105,7 +105,7 @@ export default function Dashboard() {
             </div>
             
             <Button
-              variant="outline"
+              variant="ghost"
               onClick={() => signOut()}
               className="text-sm md:text-base"
             >
@@ -122,7 +122,7 @@ export default function Dashboard() {
           {/* Welcome Card */}
           <div className="luxury-card p-6 md:p-8 mb-8 md:mb-12 text-center">
             <h2 className="text-2xl md:text-3xl font-lora font-bold text-white mb-4">
-              Ready to Start Your Learning Journey, {getFirstName()}?
+              Ready to Start Your Learning Journey, <span className="text-yellow-400">{getFirstName()}</span>?
             </h2>
             <p className="text-green-200 text-lg mb-6 max-w-2xl mx-auto">
               Your dashboard is where you'll track your progress, manage your skills, and connect with other learners.
@@ -134,7 +134,7 @@ export default function Dashboard() {
                   Explore Skills
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button size="lg" asChild>
                 <Link href="/profile">
                   <User className="w-5 h-5 mr-2" />
                   Complete Your Profile
@@ -151,7 +151,7 @@ export default function Dashboard() {
               <p className="text-2xl font-bold text-yellow-400">{stats.skillsLearning}</p>
               <p className="text-green-200 text-sm">Enrolled courses</p>
               {stats.skillsLearning === 0 && (
-                <Button variant="link" className="text-purple-400 mt-2" asChild>
+                <Button variant="link" className="!text-yellow-400 mt-2" asChild>
                   <Link href="/skills">Start learning</Link>
                 </Button>
               )}
@@ -163,7 +163,7 @@ export default function Dashboard() {
               <p className="text-2xl font-bold text-purple-400">{stats.skillsTeaching}</p>
               <p className="text-green-200 text-sm">Modules created</p>
               {stats.skillsTeaching === 0 && (
-                <Button variant="link" className="text-purple-400 mt-2" asChild>
+                <Button variant="link" className="!text-purple-400 mt-2" asChild>
                   <Link href="/skills/create">Share your skills</Link>
                 </Button>
               )}
@@ -174,7 +174,7 @@ export default function Dashboard() {
               <h3 className="text-lg font-semibold text-white mb-2">Community</h3>
               <p className="text-2xl font-bold text-green-400">0</p>
               <p className="text-green-200 text-sm">Connections made</p>
-              <Button variant="link" className="text-purple-400 mt-2" asChild>
+              <Button variant="link" className="!text-green-400 mt-2" asChild>
                 <Link href="/community">Explore community</Link>
               </Button>
             </div>
@@ -234,19 +234,19 @@ export default function Dashboard() {
                     Browse All Skills
                   </Link>
                 </Button>
-                <Button variant="outline" className="w-full justify-start" asChild>
+                <Button className="w-full justify-start" asChild>
                   <Link href="/profile">
                     <User className="w-4 h-4 mr-2" />
                     Edit Profile
                   </Link>
                 </Button>
-                <Button variant="outline" className="w-full justify-start" asChild>
+                <Button className="w-full justify-start" asChild>
                   <Link href="/skills/create">
                     <Settings className="w-4 h-4 mr-2" />
                     Create Learning Module
                   </Link>
                 </Button>
-                <Button variant="outline" className="w-full justify-start" asChild>
+                <Button className="w-full justify-start" asChild>
                   <Link href="/community">
                     <User className="w-4 h-4 mr-2" />
                     Find Learning Partners
