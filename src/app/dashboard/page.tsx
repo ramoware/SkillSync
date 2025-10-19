@@ -50,7 +50,7 @@ export default function Dashboard() {
 
   if (status === 'loading') {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="text-center">
           <div className="w-16 h-16 mx-auto mb-4 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
           <p className="text-green-200">Loading...</p>
@@ -61,7 +61,7 @@ export default function Dashboard() {
 
   if (!session) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="text-center">
           <div className="w-16 h-16 mx-auto mb-4 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
           <p className="text-green-200">Redirecting...</p>
