@@ -1,20 +1,15 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Footer } from '@/components/layout/footer'
 import { AlertTriangle, ArrowLeft, Home } from 'lucide-react'
 
-// Force dynamic rendering
-export const dynamic = 'force-dynamic'
-
 export default function AuthErrorPage() {
-  // For now, we'll show a generic error message
-  // In a real app, you might want to use a different approach to get the error
-  
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
       <header className="p-4 md:p-6">
         <Button variant="ghost" asChild className="text-green-200 hover:text-yellow-400">
           <Link href="/">
@@ -24,11 +19,9 @@ export default function AuthErrorPage() {
         </Button>
       </header>
 
-      {/* Main Content */}
       <main className="flex-1 flex items-center justify-center px-4 sm:px-6 py-8">
         <div className="w-full max-w-md text-center">
           <div className="luxury-card p-6 md:p-8">
-            {/* Error Icon */}
             <div className="w-16 h-16 mx-auto mb-6 bg-red-500/20 rounded-full flex items-center justify-center">
               <AlertTriangle className="w-8 h-8 text-red-400" />
             </div>
@@ -38,7 +31,7 @@ export default function AuthErrorPage() {
             </h1>
             
             <p className="text-green-200 mb-6">
-              There was a problem with the authentication process. Please try signing in again.
+              There was an issue with authentication. Please try again.
             </p>
 
             <div className="space-y-4">
