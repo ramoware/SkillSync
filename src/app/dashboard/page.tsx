@@ -10,6 +10,8 @@ export default async function DashboardPage() {
     redirect('/auth/signin');
   }
 
+  const firstName = session.user?.name?.split(' ')[0] || 'User';
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
       {/* Header */}
@@ -18,34 +20,46 @@ export default async function DashboardPage() {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-2xl font-bold text-white font-lora">SkillSync</h1>
-              <p className="text-gray-400">Welcome back, {session.user?.name?.split(' ')[0] || 'User'}!</p>
+              <p className="text-gray-400">Welcome back, {firstName}!</p>
             </div>
-            <div className="flex items-center space-x-4">
-              <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+            <nav className="flex items-center space-x-4">
+              <Link 
+                href="/" 
+                className="text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5"
+                title="Home"
+              >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
               </Link>
-              <Link href="/dashboard/skills" className="text-gray-300 hover:text-white transition-colors">
+              <Link 
+                href="/dashboard/skills" 
+                className="text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5"
+                title="Skills"
+              >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </Link>
-              <Link href="/dashboard/profile" className="text-gray-300 hover:text-white transition-colors">
+              <Link 
+                href="/dashboard/profile" 
+                className="text-gray-300 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/5"
+                title="Profile"
+              >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </Link>
-            </div>
+            </nav>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {/* Skills Card */}
-          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10">
+          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10 hover:border-white/20 transition-all">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4">
                 <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +78,7 @@ export default async function DashboardPage() {
           </div>
 
           {/* Profile Card */}
-          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10">
+          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10 hover:border-white/20 transition-all">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-4">
                 <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,7 +97,7 @@ export default async function DashboardPage() {
           </div>
 
           {/* AI Analysis Card */}
-          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10">
+          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10 hover:border-white/20 transition-all">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4">
                 <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,20 +114,20 @@ export default async function DashboardPage() {
         </div>
 
         {/* Quick Stats */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10 text-center hover:border-white/20 transition-all">
             <div className="text-2xl font-bold text-yellow-400 mb-2">0</div>
             <div className="text-gray-400">Skills Added</div>
           </div>
-          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10 text-center">
+          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10 text-center hover:border-white/20 transition-all">
             <div className="text-2xl font-bold text-purple-400 mb-2">0</div>
             <div className="text-gray-400">Skills to Learn</div>
           </div>
-          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10 text-center">
+          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10 text-center hover:border-white/20 transition-all">
             <div className="text-2xl font-bold text-green-400 mb-2">0%</div>
             <div className="text-gray-400">Profile Complete</div>
           </div>
-          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10 text-center">
+          <div className="bg-white/5 rounded-2xl p-6 backdrop-blur-lg border border-white/10 text-center hover:border-white/20 transition-all">
             <div className="text-2xl font-bold text-blue-400 mb-2">0</div>
             <div className="text-gray-400">AI Insights</div>
           </div>
