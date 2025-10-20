@@ -225,7 +225,7 @@ We love your input! We want to make contributing to SkillSync as easy and transp
 
 | Dashboard | Skills | Profile |
 |-----------|--------|---------|
-| ![Dashboard](https://via.placeholder.com/300x200/0f172a/8b5cf6?text=Dashboard) | ![Skills](https://via.placeholder.com/300x200/1e293b/fbbf24?text=Skills) | ![Profile](https://via.placeholder.com/300x200/0f172a/10b981?text=Profile) |
+| ![Dashboard](dashboard.png) | ![Skills](skills.png) | ![Profile](profile.png) |
 
 </div>
 
@@ -244,7 +244,7 @@ We love your input! We want to make contributing to SkillSync as easy and transp
 
 <div align="center">
 
-| [![Ramdev Chaudhary](https://via.placeholder.com/100/8b5cf6/white?text=R)](https://github.com/ramoware) |
+| [![Ramdev Chaudhary](me.png) |
 |:-------------------------------------------------------------------------------------------------------:|
 | [**Ramdev Chaudhary**](https://github.com/ramoware) <br> 🚀 Full-Stack Developer & Project Lead         |
 
