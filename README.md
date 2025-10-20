@@ -246,7 +246,7 @@ We love your input! We want to make contributing to SkillSync as easy and transp
 
 <div align="center">
 
-| ![Ramdev](me.png) |
+| <img src="me.png" alt="Ramdev" width="300" height="300"/> |
 |:-------------------------------------------------------------------------------------------------------:|
 | [**Ramdev Chaudhary**](https://github.com/ramoware) <br> 🚀 Full-Stack Developer & Project Lead         |
 
