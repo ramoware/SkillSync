@@ -3,6 +3,8 @@
 *A modern, AI-powered skill exchange platform connecting learners and teachers worldwide* 🌎
 ---
 
+![Talent Precision AI](hero.png)
+
 <div align="center">
 
 ![SkillSync Logo](https://img.shields.io/badge/SkillSync-Learning%20Platform-purple?style=for-the-badge&logo=react&logoColor=white)
@@ -244,7 +246,7 @@ We love your input! We want to make contributing to SkillSync as easy and transp
 
 <div align="center">
 
-| [![Ramdev Chaudhary](me.png) |
+| ![Ramdev](me.png) |
 |:-------------------------------------------------------------------------------------------------------:|
 | [**Ramdev Chaudhary**](https://github.com/ramoware) <br> 🚀 Full-Stack Developer & Project Lead         |
 
