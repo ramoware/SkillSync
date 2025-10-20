@@ -18,7 +18,7 @@ export default function Home() {
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-lora font-bold mb-4 md:mb-6 leading-tight">
-            <span style={{color:'white'}}>SkillSync</span>
+            <span style={{color:'white'}}>CoLearn</span>
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl text-green-100 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
