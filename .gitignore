@@ -27,6 +27,7 @@ yarn-error.log*
 .env
 
 # Vercel
+.secrets
 .vercel
 
 # TypeScript
