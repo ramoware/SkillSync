@@ -1,5 +1,8 @@
 # SkillSync 🚀
 
+*A modern, AI-powered skill exchange platform connecting learners and teachers worldwide*
+---
+
 <div align="center">
 
 ![SkillSync Logo](https://img.shields.io/badge/SkillSync-Learning%20Platform-purple?style=for-the-badge&logo=react&logoColor=white)
@@ -7,13 +10,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-*A modern, AI-powered skill exchange platform connecting learners and teachers worldwide*
-
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://skillsync.vercel.app)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![GitHub Stars](https://img.shields.io/github/stars/ramoware/SkillSync?style=for-the-badge&logo=github&color=yellow)](https://github.com/ramoware/SkillSync/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/ramoware/SkillSync?style=for-badge&logo=github&color=green)](https://github.com/ramoware/SkillSync/network/members)
+![CI/CD](https://img.shields.io/github/actions/workflow/status/<username>/<repo>/<workflow_file>.yml?label=CI%2FCD&style=for-the-badge&logo=githubactions&logoColor=white)
 
 </div>
 
