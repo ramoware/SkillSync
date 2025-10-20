@@ -1,6 +1,6 @@
 # SkillSync 🚀
 
-*A modern, AI-powered skill exchange platform connecting learners and teachers worldwide*
+*A modern, AI-powered skill exchange platform connecting learners and teachers worldwide* 🌎
 ---
 
 <div align="center">
