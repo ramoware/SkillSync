@@ -48,7 +48,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-green-700/30 mt-6 md:mt-8 pt-6 md:pt-8 text-center">
           <p className="text-green-400 text-xs md:text-sm">
-            © 2025 SkillSync. Built with 💛 Next.js 15, TypeScript, and AI. All rights reserved.
+            © 2025 CoLearn. Built with 💛 Next.js 15, TypeScript, and AI. All rights reserved.
           </p>
         </div>
       </div>
