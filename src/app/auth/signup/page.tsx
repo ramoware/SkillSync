@@ -34,7 +34,7 @@ export default function SignUp() {
       } else {
         router.push('/dashboard')
       }
-    } catch (error) {
+    } catch {
       alert('An error occurred')
     } finally {
       setLoading(false)
