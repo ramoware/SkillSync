@@ -6,12 +6,11 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Footer } from '@/components/layout/footer'
-import { Home, Search, User, LogOut, Save, Upload, Plus, X } from 'lucide-react'
+import { Home, Search, User, LogOut, Save, Plus, X } from 'lucide-react'
 
 export default function ProfilePage() {
   const { data: session, status } = useSession()
   const router = useRouter()
-  const [loading, setLoading] = useState(false)
   const [saving, setSaving] = useState(false)
   const [profile, setProfile] = useState({
     name: '',
@@ -203,7 +202,7 @@ export default function ProfilePage() {
                     value={profile.bio}
                     onChange={(e) => setProfile({ ...profile, bio: e.target.value })}
                     className="w-full px-4 py-3 bg-green-900/50 border border-green-600/30 rounded-lg text-white placeholder-green-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="Tell us about yourself, your interests, and what you're passionate about..."
+                    placeholder="Tell us about yourself, your interests, and what you&apos;re passionate about..."
                   />
                   <p className="text-green-300 text-sm mt-2">
                     {profile.bio.length}/500 characters
@@ -259,7 +258,7 @@ export default function ProfilePage() {
             <div className="luxury-card p-6 md:p-8">
               <h2 className="text-xl font-lora font-semibold text-white mb-6">Skills You Want to Learn</h2>
               <p className="text-green-200 mb-4">
-                Add skills you're interested in learning from others.
+                Add skills you&apos;re interested in learning from others.
               </p>
 
               <div className="flex gap-4 mb-6">

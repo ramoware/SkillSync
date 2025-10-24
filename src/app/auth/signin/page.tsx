@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { signIn, getSession } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
@@ -31,7 +31,7 @@ export default function SignIn() {
       } else {
         router.push('/dashboard')
       }
-    } catch (error) {
+    } catch {
       alert('An error occurred')
     } finally {
       setLoading(false)
@@ -145,7 +145,7 @@ export default function SignIn() {
             {/* Sign Up Link */}
             <div className="text-center mt-6 md:mt-8">
               <p className="text-green-300 text-sm md:text-base">
-                Don't have an account?{' '}
+                Don&apos;t have an account?{' '}
                 <Link href="/auth/signup" className="text-yellow-400 hover:text-yellow-300 font-semibold">
                   Sign up
                 </Link>

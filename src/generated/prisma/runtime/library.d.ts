@@ -196,11 +196,6 @@ export declare type ClientOtherOps = {
     $runCommandRaw(command: InputJsonObject): PrismaPromise<JsonObject>;
 };
 
-declare type ColumnType = (typeof ColumnTypeEnum)[keyof typeof ColumnTypeEnum];
-
-declare const ColumnTypeEnum: {
-    readonly Int32: 0;
-    readonly Int64: 1;
     readonly Float: 2;
     readonly Double: 3;
     readonly Numeric: 4;
@@ -396,13 +391,6 @@ declare class DbNull extends NullTypesEnumValue {
     #private;
 }
 
-export declare const Debug: typeof debugCreate & {
-    enable(namespace: any): void;
-    disable(): any;
-    enabled(namespace: string): boolean;
-    log: (...args: string[]) => void;
-    formatters: {};
-};
 
 /**
  * Create a new debug instance with the given namespace.
@@ -1472,7 +1460,6 @@ export declare type GetAggregateResult<P extends OperationPayload, A> = {
     };
 };
 
-declare function getBatchRequestPayload(batch: JsonQuery[], transaction?: TransactionOptions_2<unknown>): QueryEngineBatchRequest;
 
 export declare type GetBatchResult = {
     count: number;
@@ -1970,7 +1957,6 @@ export declare function isTypedSql(value: unknown): value is UnknownTypedSql;
 
 export declare type ITXClientDenyList = (typeof denylist)[number];
 
-export declare const itxClientDenyList: readonly (string | symbol)[];
 
 declare interface Job {
     resolve: (data: any) => void;
@@ -2491,7 +2477,6 @@ export declare const objectEnumValues: {
     };
 };
 
-declare const officialPrismaAdapters: readonly ["@prisma/adapter-planetscale", "@prisma/adapter-neon", "@prisma/adapter-libsql", "@prisma/adapter-better-sqlite3", "@prisma/adapter-d1", "@prisma/adapter-pg", "@prisma/adapter-mssql", "@prisma/adapter-mariadb"];
 
 export declare type Omission = Record<string, boolean | Skip>;
 
@@ -2704,7 +2689,6 @@ export declare class PrismaClientValidationError extends Error {
     get [Symbol.toStringTag](): string;
 }
 
-declare function prismaGraphQLToJSError({ error, user_facing_error }: RequestError, clientVersion: string, activeProvider: string): PrismaClientKnownRequestError | PrismaClientUnknownRequestError;
 
 declare type PrismaOperationSpec<TArgs, TAction = string> = {
     args: TArgs;
@@ -3200,12 +3184,6 @@ export declare type RequiredKeys<O> = {
     [K in keyof O]-?: {} extends Pick_2<O, K> ? never : K;
 }[keyof O];
 
-declare function resolveDatasourceUrl({ inlineDatasources, overrideDatasources, env, clientVersion, }: {
-    inlineDatasources: GetPrismaClientConfig['inlineDatasources'];
-    overrideDatasources: Datasources;
-    env: Record<string, string | undefined>;
-    clientVersion: string;
-}): string;
 
 export declare type Result<T, A, F extends Operation> = T extends {
     [K: symbol]: {

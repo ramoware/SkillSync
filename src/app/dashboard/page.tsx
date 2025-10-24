@@ -125,7 +125,7 @@ export default function Dashboard() {
               Ready to Start Your Learning Journey, <span className="text-yellow-400">{getFirstName()}</span>?
             </h2>
             <p className="text-green-200 text-lg mb-6 max-w-2xl mx-auto">
-              Your dashboard is where you'll track your progress, manage your skills, and connect with other learners.
+              Your dashboard is where you&apos;ll track your progress, manage your skills, and connect with other learners.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

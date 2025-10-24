@@ -1,46 +1,23 @@
-// Simple AI service with fallbacks that doesn't rely on external APIs
 
-const generateChatResponse = (userMessage: string): string => {
-  // Simple rule-based responses - no external API calls
-  const lowerMessage = userMessage.toLowerCase();
+import { openai } from '@/lib/ai'
+import { streamText } from 'ai'
 
-  if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-    return "Hello! I'm your SkillSync assistant. I can help you explore skills, create learning modules, and connect with our community. What would you like to know?";
+// AI service that uses a generative AI model
+const generateChatResponse = async (userMessage: string): Promise<string> => {
+  try {
+    const { text } = await streamText({
+      model: openai('gpt-4-turbo-2024-04-09'),
+      prompt: userMessage,
+    })
+
+    return text
+  } catch (error) {
+    console.error('Error generating AI response:', error)
+    return "I'm sorry, I'm having trouble connecting to the AI service. Please try again later."
   }
-
-  if (lowerMessage.includes('skill') || lowerMessage.includes('learn') || lowerMessage.includes('teach')) {
-    return "SkillSync lets you both learn and teach skills! You can browse skills like React Development, UI/UX Design, Digital Marketing, and more. You can also create your own learning modules to teach others.";
-  }
-
-  if (lowerMessage.includes('quiz') || lowerMessage.includes('test') || lowerMessage.includes('practice')) {
-    return "We have an AI Quiz Generator feature! You can create practice quizzes on any topic to test your knowledge. Visit the Quiz section to try it out.";
-  }
-
-  if (lowerMessage.includes('module') || lowerMessage.includes('create') || lowerMessage.includes('course')) {
-    return "To create a learning module, go to the 'Create Skill' page. You can add multiple lessons, set durations, and structure your content to help others learn effectively.";
-  }
-
-  if (lowerMessage.includes('profile') || lowerMessage.includes('account')) {
-    return "You can manage your profile, add skills you want to teach or learn, and update your personal information in the Profile section.";
-  }
-
-  if (lowerMessage.includes('community') || lowerMessage.includes('connect') || lowerMessage.includes('people')) {
-    return "Our community feature lets you connect with other learners and experts. You can browse profiles, see what skills people are offering, and make new connections!";
-  }
-
-  if (lowerMessage.includes('help') || lowerMessage.includes('support')) {
-    return "I can help you with:\n• Finding and browsing skills\n• Creating learning modules\n• Generating practice quizzes\n• Connecting with the community\n• Managing your profile\n\nWhat specific help do you need?";
-  }
-
-  if (lowerMessage.includes('thank') || lowerMessage.includes('thanks')) {
-    return "You're welcome! I'm happy to help. Is there anything else you'd like to know about SkillSync?";
-  }
-
-  // Default response for other messages
-  return "I'm here to help you get the most out of SkillSync! You can explore skills, create learning content, take quizzes, and connect with our community. What would you like to do today?";
 };
 
-const generateQuiz = (topic: string, difficulty: string = 'beginner', numberOfQuestions: number = 5): any[] => {
+const generateQuiz = (topic: string, numberOfQuestions: number = 5): any[] => {
   // Pre-defined quiz templates
   const quizTemplates: { [key: string]: any[] } = {
     'react': [

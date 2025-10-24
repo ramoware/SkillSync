@@ -1,3 +1,4 @@
+
 import { aiService } from '@/lib/ai-service'
 
 export async function POST(req: Request) {
@@ -8,7 +9,7 @@ export async function POST(req: Request) {
     const lastMessage = messages[messages.length - 1]?.content || 'Hello'
     
     // Generate response using our local AI service
-    const response = aiService.generateChatResponse(lastMessage)
+    const response = await aiService.generateChatResponse(lastMessage)
 
     return new Response(
       JSON.stringify({
@@ -29,16 +30,10 @@ export async function POST(req: Request) {
     
     return new Response(
       JSON.stringify({
-        id: Date.now().toString(),
-        choices: [{
-          message: {
-            role: 'assistant',
-            content: "I'm here to help you with SkillSync! You can browse skills, create learning modules, or connect with our community. How can I assist you today?"
-          }
-        }]
+        error: 'An error occurred while processing your request.'
       }),
       {
-        status: 200,
+        status: 500,
         headers: { 'Content-Type': 'application/json' },
       }
     )
